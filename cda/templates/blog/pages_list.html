@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Páginas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% include 'blog/navbar.html' %}
+
+    <div class="container">
+        <h1>Lista de Páginas</h1>
+
+        <div class="page-cards">
+            {% for page in object_list %}
+                <div class="card">
+                    <h3>{{ page.title }}</h3>
+                    <p>{{ page.subtitle }}</p>
+                    <a href="{% url 'page_detail' page.pk %}" class="btn">Leer más</a>
+                </div>
+            {% empty %}
+                <p>No hay páginas aún.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

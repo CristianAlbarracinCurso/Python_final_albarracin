@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenido a mi Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    {% include 'blog/navbar.html' %}
+
+    <div class="container">
+      <h1>Bienvenido a mi Blog</h1>
+
+      {% if pages %}
+      <div class="pages-list">
+        {% for page in pages %}
+        <div class="page-item">
+          <h2>{{ page.title }}</h2>
+          <p>{{ page.subtitle }}</p>
+          <a href="{% url 'page_detail' page.pk %}" class="btn">Leer más</a>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p>No hay páginas aún.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acerca de</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    {% include 'blog/navbar.html' %}
+    <header>
+      <h1>Acerca de nosotros</h1>
+    </header>
+
+    <section>
+      <h2>Bienvenido a nuestro blog</h2>
+      <p>
+        Este es un espacio donde compartimos artículos y recursos sobre
+        tecnología, desarrollo web, y más.
+      </p>
+      <p>
+        Nuestro objetivo es proporcionar contenido relevante y útil para
+        profesionales y entusiastas de la tecnología.
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Mi Blog. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

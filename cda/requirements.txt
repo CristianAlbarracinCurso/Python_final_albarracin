@@ -1,0 +1,5 @@
+django
+django-crispy-forms
+django-ckeditor
+pillow
+Django==4.2.5
