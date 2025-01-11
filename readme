@@ -1,10 +1,10 @@
-Blog Project
+# Blog Project
 
-Descripción
+## Descripción
 
 Este es un proyecto de blog desarrollado con Django que permite a los usuarios crear, actualizar y eliminar publicaciones. Cada usuario puede ver y gestionar solo sus propias publicaciones. El proyecto incluye integración con CKEditor para edición enriquecida de texto, soporte para carga de imágenes, y un sistema de autenticación de usuarios.
 
-Tecnologías Utilizadas
+### Tecnologías Utilizadas
 
 Lenguaje: Python 3.10
 
@@ -16,8 +16,7 @@ Frontend: HTML, CSS, Bootstrap
 
 Gestor de Dependencias: pip
 
-
-Características Principales
+### Características Principales
 
 Sistema de autenticación para usuarios registrados.
 
@@ -29,9 +28,7 @@ Carga y visualización de imágenes en las publicaciones.
 
 Visualización del listado de publicaciones en el home.
 
-
-
-Requisitos
+## Requisitos
 
 Python 3.10+
 
@@ -39,34 +36,31 @@ pip para la gestión de dependencias.
 
 Django 4.0+
 
-Instalación
+### Instalación
 
 Clona el repositorio:
-
-git clone https://github.com/CristianAlbarracinCurso/Python_final_albarracin.git
-cd Python_final_albarracin
+``git clone https://github.com/CristianAlbarracinCurso/Python_final_albarracin.git
+cd Python_final_albarracin``
 
 Crea un entorno virtual e instálalo:
-
-python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+``python -m venv venv``
+ 
+ En Windows:
+ ``venv\Scripts\activate``
 
 Instala las dependencias:
-
-pip install -r requirements.txt
+``pip install -r requirements.txt``
 
 Realiza las migraciones:
-
-python manage.py makemigrations
-python manage.py migrate
+``python manage.py makemigrations
+python manage.py migrate``
 
 Ejecuta el servidor:
-
-python manage.py runserver
+``python manage.py runserver```
 
 Accede al proyecto en tu navegador en http://127.0.0.1:8000/.
 
-Uso de la Aplicación
+## Uso de la Aplicación
 
 Inicio de sesión: Los usuarios deben iniciar sesión o registrarse para acceder a las funcionalidades principales.
 
@@ -77,7 +71,7 @@ Edición y eliminación: Cada usuario puede editar o eliminar sus publicaciones 
 Visualización: El home muestra un resumen de las publicaciones. Si el contenido es largo, aparece un enlace para ver los detalles completos.
 
 
-Modelo de Base de Datos
+## Modelo de Base de Datos
 
 Page
 
@@ -98,3 +92,5 @@ updated_at: Fecha de última modificación.
 Extras
 
 Capturas de pantalla: 
+
+[![1](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/1.png "1")](http://https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/1.png "1")
