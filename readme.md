@@ -110,5 +110,26 @@ Este es un proyecto de blog desarrollado con Django que permite a los usuarios c
 ![Captura 1](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/1.png)
 
 ---
+![Captura 2](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/2.png)
 
+---
+![Captura 3](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/3.png)
+
+---
+![Captura 4](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/4.png)
+
+---
+![Captura 5](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/5.png)
+
+---
+![Captura 6](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/6.png)
+
+---
+![Captura 7](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/7.png)
+
+---
+
+![Captura video](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/demo.mp4)
+
+---
 ¡Gracias por revisar este proyecto! 😊
