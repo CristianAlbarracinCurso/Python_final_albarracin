@@ -132,4 +132,10 @@ Este es un proyecto de blog desarrollado con Django que permite a los usuarios c
 ![Captura video](https://github.com/CristianAlbarracinCurso/Python_final_albarracin/blob/main/VideoDemostracion/demo.mp4)
 
 ---
+
+
+https://github.com/user-attachments/assets/667a46e9-90c6-4ece-b304-0f397bff07d1
+
+
+---
 ¡Gracias por revisar este proyecto! 😊
