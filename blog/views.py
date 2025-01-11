@@ -22,10 +22,9 @@ def page_create(request):
     if request.method == 'POST':
         form = PageForm(request.POST)
         if form.is_valid():
-            # Guardar el objeto en la base de datos
             title = form.cleaned_data['title']
             content = form.cleaned_data['content']
-            page = Page(title=title, content=content)  # Asegúrate de tener un modelo Page
+            page = Page(title=title, content=content)  
             page.save()
             messages.success(request, "¡El post se ha creado correctamente!")
             return redirect('home')  # Redirige después de guardar
@@ -121,7 +120,6 @@ def logout_view(request):
 
 
 # Vistas basadas en clases para el modelo Page
-
 class PageListView(ListView):
     model = Page
     template_name = 'blog/pages_list.html'

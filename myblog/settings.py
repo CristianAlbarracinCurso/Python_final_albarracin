@@ -47,7 +47,7 @@ MIDDLEWARE = [
 
 SITE_ID = 1
 
-# URL principal
+
 ROOT_URLCONF = 'myblog.urls'
 
 # Plantillas
@@ -70,10 +70,10 @@ TEMPLATES = [
 print("BASE_DIR:", BASE_DIR)
 print("Templates DIR:", os.path.join(BASE_DIR, 'templates'))
 
-# WSGI
+
 WSGI_APPLICATION = 'myblog.wsgi.application'
 
-# ASGI
+
 ASGI_APPLICATION = 'myblog.asgi.application'
 
 # Base de datos SQLite
@@ -122,17 +122,17 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Por defecto, inicio de sesión
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',  # Backend predeterminado
-    'allauth.account.auth_backends.AuthenticationBackend',  # Backend de allauth
+    'django.contrib.auth.backends.ModelBackend',  
+    'allauth.account.auth_backends.AuthenticationBackend',  
 ]
 
 # Configuración de django-allauth
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Permitir iniciar sesión con nombre de usuario o correo
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = True

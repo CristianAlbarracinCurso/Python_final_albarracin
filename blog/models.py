@@ -9,10 +9,10 @@ class Page(models.Model):
     subtitle = models.CharField(max_length=200)
     content = ProseEditorField()
     image = models.ImageField(upload_to='media/pages/')
-    created_at = models.DateTimeField(auto_now_add=True)  # Mantener solo uno
+    created_at = models.DateTimeField(auto_now_add=True)  
     updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL,  # Referencia al modelo de usuario personalizado
+        settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE
     )
 

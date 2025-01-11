@@ -1,47 +1,35 @@
-{% extends 'base.html' %}
-
-{% block title %}Home{% endblock %}
-
-
-
-{% block content %}
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
 <div class="container mt-5">
-    <header class="bg-primary text-white text-center py-5 mb-4">
-    <h1>Publicaiones Recientes</h1></header>
-    <div class="row">
-        {% for post in posts %}
-            <div class="col-md-6 mb-4 d-flex align-items-stretch">
-                <div class="card w-100">
-                    {% if post.image %}
-                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p>
-                           
-                                {{ post.content}}
-                   
-                         
-                        </p>
+  <header class="bg-primary text-white text-center py-5 mb-4">
+    <h1>Publicaciones Recientes</h1>
+  </header>
+  <div class="row">
+    {% for post in posts %}
+    <div class="col-md-6 mb-4 d-flex align-items-stretch">
+      <div class="card w-100">
+        {% if post.image %}
+        <img
+          src="{{ post.image.url }}"
+          class="card-img-top"
+          alt="{{ post.title }}"
+        />
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p>{{ post.content}}</p>
 
-
-
-
-
-                        <p class="card-text">
-                            <small class="text-muted">Publicado el {{ post.created_at|date:"d M Y H:i" }} 
-                            por 
-                            <strong>
-                            {{ post.author.username }}
-                            </strong>
-                            </small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+          <p class="card-text">
+            <small class="text-muted"
+              >Publicado el {{ post.created_at|date:"d M Y H:i" }} por
+              <strong> {{ post.author.username }} </strong>
+            </small>
+          </p>
+        </div>
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}
-

@@ -13,7 +13,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
         await self.accept()
 
-        # Prueba: enviar mensaje de prueba al cliente
+        # Enviar mensaje de bienvenida al servidor
         await self.send(text_data=json.dumps({
             'message': 'Bienvenido al Chat',
             'user': 'Servidor',
@@ -21,7 +21,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
         
     async def disconnect(self, close_code):
-        # Leave room group
         await self.channel_layer.group_discard(
             self.room_group_name,
             self.channel_name
@@ -34,7 +33,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         user = self.scope["user"].username
         print(f"Message received: {message} from {user}")
 
-        # Send message to room group
         await self.channel_layer.group_send(
             self.room_group_name,
             {
@@ -50,7 +48,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
         print(f"Broadcasting message: {message} from {user}")
 
-        # Send message to WebSocket
         await self.send(text_data=json.dumps({
             'message': message,
             'user': user,

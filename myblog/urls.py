@@ -8,13 +8,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Blog
-    path('', include('blog.urls')),  # Incluye las rutas del blog (posts, páginas, etc.)
+    path('', include('blog.urls')),  
 
     # Cuentas y autenticación
-    path('accounts/', include('allauth.urls')),  # Rutas para registro, login y más con django-allauth
+    path('accounts/', include('allauth.urls')),  
 
     # Mensajería
-    path('messaging/', include('messaging.urls')),  # Funcionalidad de mensajería entre usuarios
+    path('messaging/', include('messaging.urls')),  
 ]
 
 # Manejo de archivos estáticos y de medios
@@ -22,4 +22,4 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-# En producción, configurar un servidor para manejar estáticos/medios
+
