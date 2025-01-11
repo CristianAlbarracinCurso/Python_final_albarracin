@@ -15,6 +15,9 @@ ALLOWED_HOSTS = []
 
 # Aplicaciones instaladas
 INSTALLED_APPS = [
+    'blog', 
+    'daphne',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -22,7 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts', 
-    'blog',  # Tu app principal
+    'django_prose_editor',
+    'allauth',
+    'allauth.account',
+    'messaging',
+      
 ]
 
 # Middlewares
@@ -34,7 +41,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
+
+
+SITE_ID = 1
 
 # URL principal
 ROOT_URLCONF = 'myblog.urls'
@@ -56,14 +67,27 @@ TEMPLATES = [
     },
 ]
 
+print("BASE_DIR:", BASE_DIR)
+print("Templates DIR:", os.path.join(BASE_DIR, 'templates'))
+
 # WSGI
 WSGI_APPLICATION = 'myblog.wsgi.application'
+
+# ASGI
+ASGI_APPLICATION = 'myblog.asgi.application'
 
 # Base de datos SQLite
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
     }
 }
 
@@ -92,19 +116,23 @@ USE_TZ = True
 # Archivos estáticos y media
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Por defecto, inicio de sesión
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Backend predeterminado
+    'allauth.account.auth_backends.AuthenticationBackend',  # Backend de allauth
+]
 
-
-# CKEditor Configuration
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-        'height': 300,
-    },
-}
+# Configuración de django-allauth
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Permitir iniciar sesión con nombre de usuario o correo
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_USERNAME_REQUIRED = True

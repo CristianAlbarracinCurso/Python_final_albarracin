@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Acerca de Nosotros{% endblock %}
+
+{% block content %}
+<header class="bg-primary text-white text-center py-5">
+  <h1>Acerca de Nosotros</h1>
+</header>
+
+<section class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+        Somos una empresa innovadora dedicada al desarrollo de tecnologías web modernas. Nuestra misión es ayudar a profesionales y entusiastas de la tecnología a crecer y aprender a través de contenido relevante y de calidad.
+      </p>
+      <p>
+        En nuestra plataforma, puedes crear y compartir tus propios artículos relacionados con el mundo de la tecnología, el desarrollo web y mucho más.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'img/empresa.png' %}"" alt="Imagen de la empresa" class="img-fluid rounded">
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        En nuestro blog, puedes unirte a la comunidad registrándote con tu cuenta y comenzar a escribir y publicar tus propios artículos.
+      </p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>1. Registro:</strong> Crea tu cuenta en nuestro sistema de registro. Es rápido y sencillo.
+        </li>
+        <li class="list-group-item">
+          <strong>2. Creación de Posts:</strong> Una vez registrado, podrás crear y compartir artículos sobre las últimas tendencias en tecnología.
+        </li>
+        <li class="list-group-item">
+          <strong>3. Comunidad:</strong> Únete a una comunidad activa de escritores y lectores apasionados por la tecnología y el desarrollo web.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light py-5 mt-4">
+  <div class="container text-center">
+    <h3>¡Únete a nosotros y empieza a compartir tus conocimientos!</h3>
+    <p>
+      Si eres un apasionado de la tecnología y deseas compartir tu experiencia, este es el lugar ideal para ti. Regístrate hoy mismo y comienza a escribir.
+    </p>
+    <a href="{% url 'signup' %}" class="btn btn-primary">Regístrate ahora</a>
+  </div>
+</section>
+
+{% endblock %}
+
+

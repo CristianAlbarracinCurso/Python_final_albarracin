@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Chat Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Chat Global</h1>
+    </header>
+
+    <section class="mt-4">
+        <div id="chat-log" class="border rounded p-3 mb-3" style="height: 300px; overflow-y: scroll; background-color: #f8f9fa;"></div>
+        
+        <div class="input-group mb-3">
+            <input id="chat-message-input" type="text" class="form-control" placeholder="Escribe tu mensaje..." aria-label="Mensaje">
+            <button id="chat-message-submit" class="btn btn-primary" type="button">Enviar</button>
+        </div>
+    </section>
+</div>
+
+<script>
+    const chatSocket = new WebSocket('ws://127.0.0.1:8000/messaging/chat/');
+
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        console.log("Mensaje recibido del servidor:", data);
+
+        const message = `<strong>${data.user}:</strong> ${data.message}`;
+        document.querySelector('#chat-log').innerHTML += `<p>${message}</p>`;
+        // Desplaza automáticamente hacia el final
+        const chatLog = document.querySelector('#chat-log');
+        chatLog.scrollTop = chatLog.scrollHeight;
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket cerrado inesperadamente');
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        const messageInputDom = document.querySelector('#chat-message-input');
+        const message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+        messageInputDom.value = '';
+    };
+</script>
+{% endblock %}

@@ -1,13 +1,39 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Perfil</title>
-</head>
-<body>
-    <h1>Editar Perfil</h1>
-    <!-- Aquí puedes añadir un formulario para editar los datos del perfil -->
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+Editar Perfil
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+   
+    <div class="row justify-content-center">
+        <div class="col-md-8"> <header class="bg-primary text-white text-center py-5 mb-4">
+    <h1 class="text-center mb-4">Editar Perfil</h1>
+    </header>
+            <div class="card p-4 shadow-lg border-light">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="mb-4">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            <div class="input-group">
+                                {{ field }}
+                            </div>
+                            {% if field.errors %}
+                                <div class="text-danger">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-primary px-4">Guardar Cambios</button>
+                        <a href="{% url 'profile' %}" class="btn btn-secondary px-4">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Crear Post{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+             <header class="bg-primary text-white text-center py-5">
+        <h1>Crear Nuevo Post</h1>
+    </header>
+     <div class="card p-4 shadow-sm">
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Publicar</button>
+    </form>
+</div>
+
+</div>
+</div>
+</div>
+{% load static %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const editor = new ProseEditor({
+            el: document.getElementById('id_content'),
+        });
+    });
+</script>
+{% endblock %}

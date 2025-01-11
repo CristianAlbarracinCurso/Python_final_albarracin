@@ -1,12 +1,14 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from django_prose_editor.fields import ProseEditorField
+from django.contrib.auth.models import User
 from django.conf import settings
+
 
 class Page(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
-    content = RichTextField()
-    image = models.ImageField(upload_to='pages/')
+    content = ProseEditorField()
+    image = models.ImageField(upload_to='media/pages/')
     created_at = models.DateTimeField(auto_now_add=True)  # Mantener solo uno
     updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(
