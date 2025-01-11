@@ -39,8 +39,8 @@ Django 4.0+
 ### Instalación
 
 Clona el repositorio:
-``git clone https://github.com/CristianAlbarracinCurso/Python_final_albarracin.git
-cd Python_final_albarracin``
+``git clone https://github.com/CristianAlbarracinCurso/Python_final_albarracin.git``
+``cd Python_final_albarracin``
 
 Crea un entorno virtual e instálalo:
 ``python -m venv venv``
@@ -52,11 +52,11 @@ Instala las dependencias:
 ``pip install -r requirements.txt``
 
 Realiza las migraciones:
-``python manage.py makemigrations
-python manage.py migrate``
+``python manage.py makemigrations``
+``python manage.py migrate``
 
 Ejecuta el servidor:
-``python manage.py runserver```
+``python manage.py runserver``
 
 Accede al proyecto en tu navegador en http://127.0.0.1:8000/.
 
